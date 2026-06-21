@@ -202,9 +202,29 @@
     height:100%;
   }
 
-  .sun{
-    transform-origin:center;
+  .sun-wrap{
+    position:absolute;
+    top:8%;
+    right:9%;
+    width:clamp(40px, 7vh, 70px);
+    aspect-ratio:1/1;
     animation:rise 7s ease-in-out infinite alternate;
+  }
+
+  .sun-glow{
+    position:absolute;
+    inset:-55%;
+    border-radius:50%;
+    background:#D6A237;
+    opacity:0.12;
+  }
+
+  .sun{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:#D6A237;
+    opacity:0.9;
   }
 
   @keyframes rise{
@@ -225,7 +245,7 @@
   }
 
   @media (prefers-reduced-motion: reduce){
-    .sun, .stalk, .eyebrow .dot, .logo{ animation:none; }
+    .sun-wrap, .stalk, .eyebrow .dot, .logo{ animation:none; }
   }
 
   @media (max-width:520px){
@@ -265,9 +285,6 @@
 
   <div class="horizon" aria-hidden="true">
     <svg viewBox="0 0 1280 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <circle class="sun" cx="1040" cy="70" r="46" fill="#D6A237" opacity="0.9"/>
-      <circle cx="1040" cy="70" r="70" fill="#D6A237" opacity="0.12"/>
-
       <path class="stalk s1" d="M120 260 C118 200 100 170 108 120 C112 145 124 150 122 120 C128 142 138 146 134 118 C140 138 150 140 146 114 C150 132 158 134 154 110" stroke="#D6A237" stroke-width="4" fill="none" stroke-linecap="round"/>
       <path class="stalk s2" d="M178 260 C176 215 162 190 168 150 C171 170 181 173 179 150 C184 168 192 170 189 148 C194 164 202 166 199 146" stroke="#D6A237" stroke-width="3.5" fill="none" stroke-linecap="round"/>
       <path class="stalk s3" d="M90 260 C92 222 80 200 86 168 C89 184 97 186 95 167 C99 181 106 183 104 165" stroke="#D6A237" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -276,6 +293,10 @@
       <path d="M0 215 C 260 175, 480 250, 740 195 C 960 150, 1100 210, 1280 180 L1280 260 L0 260 Z" fill="#4F7942" opacity="0.7"/>
       <path d="M0 235 C 300 205, 520 255, 800 220 C 1000 195, 1140 230, 1280 215 L1280 260 L0 260 Z" fill="#1B4332"/>
     </svg>
+    <div class="sun-wrap">
+      <div class="sun-glow"></div>
+      <div class="sun"></div>
+    </div>
   </div>
 </div>
 
