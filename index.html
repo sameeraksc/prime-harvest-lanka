@@ -46,7 +46,6 @@
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:flex-start;
     padding:clamp(0.8rem, 4vh, 2.2rem) 1.5rem 0;
   }
 
@@ -192,16 +191,15 @@
   .horizon{
     position:relative;
     width:100%;
-    margin-top:auto;
+    flex:1 1 auto;
+    min-height:90px;
     line-height:0;
-    max-height:24vh;
-    overflow:hidden;
   }
 
   .horizon svg{
     display:block;
     width:100%;
-    height:auto;
+    height:100%;
   }
 
   .sun{
@@ -237,7 +235,7 @@
   }
 
   @media (max-height:680px){
-    .horizon{ max-height:16vh; }
+    .horizon{ min-height:60px; }
     .lede{ margin-bottom:clamp(0.8rem, 2vh, 1.4rem); }
   }
 </style>
