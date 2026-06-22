@@ -9,7 +9,7 @@
    from your EmailJS dashboard: https://www.emailjs.com/
    ---------------------------------------------------------------- */
 const EMAILJS_PUBLIC_KEY  = 'KLireaftGOD275--d';   // e.g. 'abc123XYZ'
-const EMAILJS_SERVICE_ID  = 'service_tfgzz52';   // e.g. 'service_xxxxxxx'
+const EMAILJS_SERVICE_ID  = 'service_kar47ol';   // e.g. 'service_xxxxxxx'
 const EMAILJS_TEMPLATE_ID = 'template_go7ip6b';  // e.g. 'template_xxxxxxx'
 
 // Initialise EmailJS once the script loads
