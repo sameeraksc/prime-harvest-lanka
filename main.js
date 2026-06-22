@@ -8,9 +8,9 @@
    Replace the three placeholders below with your real credentials
    from your EmailJS dashboard: https://www.emailjs.com/
    ---------------------------------------------------------------- */
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
+const EMAILJS_PUBLIC_KEY  = 'KLireaftGOD275--d';   // e.g. 'abc123XYZ'
+const EMAILJS_SERVICE_ID  = 'service_tfgzz52';   // e.g. 'service_xxxxxxx'
+const EMAILJS_TEMPLATE_ID = 'template_go7ip6b';  // e.g. 'template_xxxxxxx'
 
 // Initialise EmailJS once the script loads
 emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -137,7 +137,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     phone:      document.getElementById('phone').value.trim() || 'Not provided',
     subject:    document.getElementById('subject').value.trim(),
     message:    document.getElementById('message').value.trim(),
-    to_email:   'primeharvest@gmail.com',
+    to_email:   'hello@primeharvestlanka.lk',
   };
 
   try {
