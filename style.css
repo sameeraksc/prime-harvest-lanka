@@ -1,0 +1,446 @@
+/* ============================================================
+   Prime Harvest Lanka (Pvt) Ltd. — Main Stylesheet
+   style.css
+   Colors:
+     Deep Green  : #0D5B36
+     Natural Green: #5C9445
+     Golden      : #D3A233
+     Sky Blue    : #D7E9F6
+   ============================================================ */
+
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #1a2e1a;
+  overflow-x: hidden;
+}
+
+/* ---------- LOGO ---------- */
+.logo-svg {
+  width: 52px;
+  height: 52px;
+}
+
+/* ---------- NAVBAR ---------- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#navbar.scrolled {
+  background: rgba(13, 91, 54, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+.nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #D3A233;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #D3A233;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- MOBILE MENU ---------- */
+#mobileMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background: rgba(13, 91, 54, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+#mobileMenu.open {
+  max-height: 360px;
+}
+
+/* ---------- HERO ---------- */
+#hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(160deg, rgba(13, 91, 54, 0.88) 0%, rgba(13, 91, 54, 0.62) 40%, rgba(211, 162, 51, 0.28) 100%),
+    url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80') center / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(211, 162, 51, 0.12) 0%, transparent 70%);
+}
+
+/* ---------- HERO FLOATING BADGE ---------- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.4rem;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D3A233;
+  animation: pulse 2s infinite;
+}
+
+/* ---------- SCROLL ANIMATIONS ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- SECTION LABELS ---------- */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D3A233;
+  margin-bottom: 0.6rem;
+}
+
+.section-line {
+  width: 56px;
+  height: 3px;
+  margin: 1rem auto 0;
+  background: linear-gradient(90deg, #0D5B36, #D3A233);
+  border-radius: 2px;
+}
+
+/* ---------- FEATURE CARDS (About section) ---------- */
+.feature-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(13, 91, 54, 0.08);
+  border: 1px solid rgba(92, 148, 69, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(13, 91, 54, 0.16);
+  border-color: rgba(92, 148, 69, 0.35);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #0D5B36 0%, #5C9445 100%);
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+
+/* ---------- MISSION / VISION CARDS ---------- */
+.mv-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- WHY CHOOSE US CARDS ---------- */
+.why-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(13, 91, 54, 0.1);
+  box-shadow: 0 2px 16px rgba(13, 91, 54, 0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.why-card:hover {
+  background: linear-gradient(135deg, #0D5B36 0%, #1a7a4a 100%);
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(13, 91, 54, 0.25);
+  border-color: transparent;
+}
+
+.why-card:hover .why-icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #D3A233;
+}
+
+.why-card:hover p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.why-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  margin: 0 auto 1rem;
+  background: rgba(13, 91, 54, 0.08);
+  color: #0D5B36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+/* ---------- GALLERY / SHOWCASE CARDS ---------- */
+.gallery-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 91, 54, 0.88) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #D3A233;
+}
+
+/* ---------- FORM INPUTS ---------- */
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(13, 91, 54, 0.18);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  background: #f8fbf8;
+}
+
+.form-input:focus {
+  border-color: #5C9445;
+  box-shadow: 0 0 0 3px rgba(92, 148, 69, 0.15);
+  background: #fff;
+}
+
+/* ---------- FOOTER LINKS ---------- */
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #D3A233;
+}
+
+/* ---------- SCROLL TO TOP BUTTON ---------- */
+#scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0D5B36, #5C9445);
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(13, 91, 54, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: none;
+}
+
+#scrollTop.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#scrollTop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(13, 91, 54, 0.5);
+}
+
+/* ---------- NOTIFICATION TOAST ---------- */
+.notify {
+  position: fixed;
+  top: 80px;
+  right: 1.5rem;
+  z-index: 2000;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  max-width: 320px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: translateX(130%);
+  transition: transform 0.4s ease;
+}
+
+.notify.show {
+  transform: translateX(0);
+}
+
+.notify.success {
+  background: #fff;
+  border-left: 4px solid #0D5B36;
+  color: #0D5B36;
+}
+
+.notify.error {
+  background: #fff;
+  border-left: 4px solid #dd4444;
+  color: #dd4444;
+}
+
+/* ---------- BACKGROUND PATTERN ---------- */
+.agri-bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230D5B36' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ---------- STAT CARD ---------- */
+.stat-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+/* ---------- KEYFRAME ANIMATIONS ---------- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.85); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}

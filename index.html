@@ -1,319 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Prime Harvest Lanka — Coming Soon</title>
-<meta name="description" content="Prime Harvest Lanka — rooted in nature, driven by innovation. Our agribusiness is taking root. Launching soon.">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --forest:#1B4332;
-    --field:#4F7942;
-    --gold:#D6A237;
-    --sky:#C9E6F5;
-    --paper:#FBF8F2;
-    --ink:#16231A;
-    --ink-soft:#3E4A3F;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prime Harvest Lanka (Pvt) Ltd. | Rooted in Nature, Driven by Innovation</title>
+  <meta name="description" content="Prime Harvest Lanka (Pvt) Ltd. combines traditional Sri Lankan agricultural knowledge with modern technologies to provide sustainable farming solutions." />
+  <meta property="og:title"       content="Prime Harvest Lanka (Pvt) Ltd." />
+  <meta property="og:description" content="Rooted in Nature, Driven by Innovation – Sri Lanka's trusted agricultural innovation partner." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.primeharveslanka.lk" />
 
-  *{box-sizing:border-box;}
-  html, body{height:100%;}
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Public Sans', sans-serif;
-  }
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  a{color:inherit;}
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  :focus-visible{
-    outline:2px solid var(--forest);
-    outline-offset:3px;
-    border-radius:3px;
-  }
+  <!-- Tailwind custom theme (must remain inline before style.css) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'agri-dark':    '#0D5B36',
+            'agri-mid':     '#1a7a4a',
+            'agri-natural': '#5C9445',
+            'agri-light':   '#8ab86e',
+            'agri-golden':  '#D3A233',
+            'agri-gold-lt': '#e8c06e',
+            'agri-sky':     '#D7E9F6',
+            'agri-sky-dk':  '#b8d5ed',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 
-  .page{
-    position:relative;
-    height:100dvh;
-    width:100%;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:clamp(0.8rem, 4vh, 2.2rem) 1.5rem 0;
-  }
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 
-  .page::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image: radial-gradient(circle, rgba(27,67,50,0.045) 1px, transparent 1px);
-    background-size: 18px 18px;
-    pointer-events:none;
-  }
-
-  .content{
-    position:relative;
-    z-index:2;
-    max-width:640px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-  }
-
-  .logo{
-    width:clamp(64px, 11vh, 100px);
-    height:clamp(64px, 11vh, 100px);
-    object-fit:cover;
-    border-radius:20px;
-    margin-bottom:clamp(0.8rem, 2.2vh, 1.6rem);
-    box-shadow:0 14px 30px rgba(27,67,50,0.28);
-    animation:float 6s ease-in-out infinite;
-  }
-
-  @keyframes float{
-    0%, 100%{ transform:translateY(0); }
-    50%{ transform:translateY(-9px); }
-  }
-
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    letter-spacing:0.22em;
-    text-transform:uppercase;
-    color:var(--field);
-    margin:0 0 clamp(0.6rem, 1.6vh, 1.1rem);
-    display:flex;
-    align-items:center;
-    gap:0.6em;
-  }
-
-  .eyebrow .dot{
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:var(--gold);
-    display:inline-block;
-    animation:pulse 2.4s ease-in-out infinite;
-  }
-
-  @keyframes pulse{
-    0%, 100%{ opacity:1; transform:scale(1); }
-    50%{ opacity:0.4; transform:scale(0.7); }
-  }
-
-  h1{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    font-size:clamp(1.7rem, 5.2vh, 3.6rem);
-    line-height:1.08;
-    letter-spacing:-0.01em;
-    margin:0 0 clamp(0.6rem, 1.6vh, 1.1rem);
-    color:var(--forest);
-  }
-
-  h1 em{
-    font-style:italic;
-    color:var(--gold);
-    font-weight:500;
-  }
-
-  .lede{
-    font-size:clamp(0.88rem, 1.9vh, 1.05rem);
-    line-height:1.55;
-    color:var(--ink-soft);
-    max-width:480px;
-    margin:0 0 clamp(1.2rem, 3vh, 2.4rem);
-  }
-
-  .lede strong{
-    color:var(--forest);
-    font-weight:600;
-  }
-
-  /* ---------- contact card ---------- */
-  .contact{
-    display:flex;
-    align-items:center;
-    gap:0.6rem;
-    background:#fff;
-    border:1px solid rgba(27,67,50,0.14);
-    border-radius:999px;
-    padding:0.5rem 0.5rem 0.5rem 1.1rem;
-    box-shadow:0 8px 24px rgba(27,67,50,0.07);
-    margin-bottom:clamp(0.5rem, 1.4vh, 0.9rem);
-  }
-
-  .contact a{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.86rem;
-    text-decoration:none;
-    color:var(--forest);
-    letter-spacing:0.01em;
-  }
-
-  .copy-btn{
-    font-family:'Public Sans', sans-serif;
-    font-size:0.76rem;
-    font-weight:600;
-    background:var(--forest);
-    color:var(--paper);
-    border:none;
-    border-radius:999px;
-    padding:0.45rem 0.9rem;
-    cursor:pointer;
-    transition:background 0.18s ease, transform 0.18s ease;
-    white-space:nowrap;
-  }
-
-  .copy-btn:hover{ background:#143728; }
-  .copy-btn:active{ transform:scale(0.96); }
-  .copy-btn[data-state="copied"]{ background:var(--field); }
-
-  .meta{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.7rem;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:rgba(22,35,26,0.45);
-    margin-bottom:clamp(1rem, 3vh, 2.5vh);
-  }
-
-  /* ---------- signature: furrowed horizon with rising sun ---------- */
-  .horizon{
-    position:relative;
-    width:100%;
-    flex:1 1 auto;
-    min-height:90px;
-    line-height:0;
-  }
-
-  .horizon svg{
-    display:block;
-    width:100%;
-    height:100%;
-  }
-
-  .sun-wrap{
-    position:absolute;
-    top:8%;
-    right:9%;
-    width:clamp(40px, 7vh, 70px);
-    aspect-ratio:1/1;
-    animation:rise 7s ease-in-out infinite alternate;
-  }
-
-  .sun-glow{
-    position:absolute;
-    inset:-55%;
-    border-radius:50%;
-    background:#D6A237;
-    opacity:0.12;
-  }
-
-  .sun{
-    position:absolute;
-    inset:0;
-    border-radius:50%;
-    background:#D6A237;
-    opacity:0.9;
-  }
-
-  @keyframes rise{
-    from{ transform:translateY(6px); opacity:0.85; }
-    to{ transform:translateY(-4px); opacity:1; }
-  }
-
-  .stalk{
-    transform-origin:bottom center;
-    animation:sway 5.5s ease-in-out infinite;
-  }
-  .stalk.s2{ animation-delay:-1.8s; }
-  .stalk.s3{ animation-delay:-3.4s; }
-
-  @keyframes sway{
-    0%, 100%{ transform:rotate(-1.4deg); }
-    50%{ transform:rotate(1.6deg); }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .sun-wrap, .stalk, .eyebrow .dot, .logo{ animation:none; }
-  }
-
-  @media (max-width:520px){
-    .contact{ flex-direction:column; align-items:stretch; border-radius:18px; padding:0.85rem; gap:0.6rem; }
-    .contact a{ text-align:center; }
-    .copy-btn{ width:100%; }
-  }
-
-  @media (max-height:680px){
-    .horizon{ min-height:60px; }
-    .lede{ margin-bottom:clamp(0.8rem, 2vh, 1.4rem); }
-  }
-</style>
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
-<div class="page">
-  <div class="content">
-    <img class="logo" src="badge.png" alt="Prime Harvest Lanka logo">
+<!-- ==================== NOTIFICATION TOAST ==================== -->
+<div id="notify" class="notify"></div>
 
-    <p class="eyebrow"><span class="dot"></span>Field notes &middot; Sri Lanka</p>
+<!-- ==================== NAVBAR ==================== -->
+<nav id="navbar" class="w-full py-3">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
 
-    <h1>Something is<br><em>taking root.</em></h1>
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="58" fill="#D7E9F6" opacity="0.25"/>
+          <path d="M38 20 L38 100 L52 100 L52 68 Q52 68 68 68 Q88 68 88 48 Q88 20 68 20 Z" fill="#0D5B36"/>
+          <path d="M52 34 L68 34 Q74 34 74 48 Q74 56 68 56 L52 56 Z" fill="#D7E9F6" opacity="0.9"/>
+          <path d="M52 60 Q66 56 78 62 Q70 68 52 68 Z" fill="#5C9445"/>
+          <path d="M52 68 Q68 65 80 72 Q72 80 52 80 Z" fill="#3d7a30" opacity="0.7"/>
+          <path d="M44 72 Q38 60 40 40" stroke="#D3A233" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="37" cy="50" rx="5" ry="3" fill="#D3A233" transform="rotate(-30 37 50)"/>
+          <ellipse cx="36" cy="44" rx="5" ry="3" fill="#D3A233" transform="rotate(-40 36 44)"/>
+          <ellipse cx="37" cy="38" rx="4" ry="2.5" fill="#D3A233" transform="rotate(-20 37 38)"/>
+          <ellipse cx="42" cy="48" rx="5" ry="3" fill="#D3A233" transform="rotate(20 42 48)"/>
+          <ellipse cx="43" cy="43" rx="4" ry="2.5" fill="#D3A233" transform="rotate(30 43 43)"/>
+          <ellipse cx="41" cy="38" rx="3.5" ry="2" fill="#D3A233" transform="rotate(15 41 38)"/>
+        </svg>
+        <div class="leading-none">
+          <div class="text-white font-bold text-lg leading-tight tracking-tight">
+            <span class="text-white">PRIME </span><span style="color:#D3A233;">HARVEST</span>
+          </div>
+          <div class="text-white/70 text-xs tracking-[0.18em] font-medium">— LANKA —</div>
+        </div>
+      </a>
 
-    <p class="lede">
-      <strong>Prime Harvest Lanka</strong> is a new agribusiness growing out of Sri Lanka's soil —
-      rooted in nature, driven by innovation. Our site is still in the ground. Reach out while we get it ready.
-    </p>
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home"    class="nav-link">Home</a>
+        <a href="#about"   class="nav-link">About Us</a>
+        <a href="#mission" class="nav-link">Mission &amp; Vision</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+      </div>
 
-    <div class="contact">
-      <a href="mailto:hello@primeharvestlanka.lk" id="emailLink">hello@primeharvestlanka.lk</a>
-      <button class="copy-btn" id="copyBtn" type="button">Copy</button>
+      <!-- CTA Button + Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="#contact"
+           class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm text-white transition-all"
+           style="background:#D3A233;"
+           onmouseover="this.style.background='#b8891c'"
+           onmouseout="this.style.background='#D3A233'">
+          <i class="fa-solid fa-phone-volume text-xs"></i> Contact Us
+        </a>
+        <button id="menuBtn" class="md:hidden text-white p-2 rounded-lg" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+        </button>
+      </div>
     </div>
-
-    <p class="meta">Est. 2026 — Launching this season</p>
   </div>
 
-  <div class="horizon" aria-hidden="true">
-    <svg viewBox="0 0 1280 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path class="stalk s1" d="M120 260 C118 200 100 170 108 120 C112 145 124 150 122 120 C128 142 138 146 134 118 C140 138 150 140 146 114 C150 132 158 134 154 110" stroke="#D6A237" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <path class="stalk s2" d="M178 260 C176 215 162 190 168 150 C171 170 181 173 179 150 C184 168 192 170 189 148 C194 164 202 166 199 146" stroke="#D6A237" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path class="stalk s3" d="M90 260 C92 222 80 200 86 168 C89 184 97 186 95 167 C99 181 106 183 104 165" stroke="#D6A237" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobileMenu">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
+      <a href="#home"    onclick="toggleMenu()" class="nav-link py-3 block border-b border-white/10">Home</a>
+      <a href="#about"   onclick="toggleMenu()" class="nav-link py-3 block border-b border-white/10">About Us</a>
+      <a href="#mission" onclick="toggleMenu()" class="nav-link py-3 block border-b border-white/10">Mission &amp; Vision</a>
+      <a href="#contact" onclick="toggleMenu()" class="nav-link py-3 block">Contact Us</a>
+      <a href="#contact" onclick="toggleMenu()"
+         class="mt-3 inline-flex justify-center items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm text-white"
+         style="background:#D3A233;">
+        <i class="fa-solid fa-phone-volume text-xs"></i> Contact Us
+      </a>
+    </div>
+  </div>
+</nav>
 
-      <path d="M0 200 C 220 150, 420 240, 680 170 C 900 115, 1080 190, 1280 150 L1280 260 L0 260 Z" fill="#A9C98C" opacity="0.55"/>
-      <path d="M0 215 C 260 175, 480 250, 740 195 C 960 150, 1100 210, 1280 180 L1280 260 L0 260 Z" fill="#4F7942" opacity="0.7"/>
-      <path d="M0 235 C 300 205, 520 255, 800 220 C 1000 195, 1140 230, 1280 215 L1280 260 L0 260 Z" fill="#1B4332"/>
+<!-- ==================== HERO SECTION ==================== -->
+<section id="home" class="relative">
+  <div id="hero" class="flex items-center justify-center px-4">
+
+    <!-- Decorative ambient circles -->
+    <div class="absolute top-24 right-16 w-64 h-64 rounded-full opacity-10"
+         style="background:radial-gradient(circle, #D3A233, transparent)"></div>
+    <div class="absolute bottom-24 left-8 w-48 h-48 rounded-full opacity-8"
+         style="background:radial-gradient(circle, #5C9445, transparent)"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10 pt-28 pb-40">
+
+      <!-- Badge -->
+      <div class="hero-badge reveal">
+        <span class="hero-badge-dot"></span>
+        Sri Lanka's Agricultural Innovation Leader
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-white font-extrabold leading-tight mb-6 reveal"
+          style="font-size: clamp(2.2rem, 5vw, 3.8rem); text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
+        Empowering Sri Lankan Agriculture<br/>
+        <span style="color:#D3A233;">Through Innovation</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-white/85 font-light leading-relaxed mb-10 max-w-2xl mx-auto reveal"
+         style="font-size: clamp(1rem, 2vw, 1.2rem);">
+        Combining generations of farming wisdom with modern agricultural technology<br class="hidden sm:block"/>
+        to create a sustainable future for Sri Lanka.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+        <a href="#about"
+           class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base text-white transition-all"
+           style="background:rgba(255,255,255,0.18); border:2px solid rgba(255,255,255,0.4); backdrop-filter:blur(8px);"
+           onmouseover="this.style.background='rgba(255,255,255,0.28)'"
+           onmouseout="this.style.background='rgba(255,255,255,0.18)'">
+          <i class="fa-solid fa-leaf"></i> Learn More
+        </a>
+        <a href="#contact"
+           class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base transition-all"
+           style="background:#D3A233; color:#fff;"
+           onmouseover="this.style.background='#b8891c'"
+           onmouseout="this.style.background='#D3A233'">
+          <i class="fa-solid fa-envelope"></i> Get In Touch
+        </a>
+      </div>
+
+      <!-- Stats Strip -->
+      <div class="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto reveal">
+        <div class="text-center">
+          <div class="text-3xl font-extrabold" style="color:#D3A233;">10+</div>
+          <div class="text-white/70 text-xs mt-1 font-medium">Years Experience</div>
+        </div>
+        <div class="text-center border-x border-white/20">
+          <div class="text-3xl font-extrabold" style="color:#D3A233;">500+</div>
+          <div class="text-white/70 text-xs mt-1 font-medium">Farmers Served</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-extrabold" style="color:#D3A233;">100%</div>
+          <div class="text-white/70 text-xs mt-1 font-medium">Sustainable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="relative" style="margin-top:-2px;">
+    <svg viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <path d="M0,64 C240,96 480,32 720,64 C960,96 1200,32 1440,64 L1440,90 L0,90 Z" fill="#ffffff"/>
     </svg>
-    <div class="sun-wrap">
-      <div class="sun-glow"></div>
-      <div class="sun"></div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT US ==================== -->
+<section id="about" class="py-20 bg-white agri-bg-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <span class="section-eyebrow">Who We Are</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-2" style="color:#0D5B36;">About Prime Harvest Lanka</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-14 items-center mb-16">
+
+      <!-- Text Content -->
+      <div class="reveal-left">
+        <p class="text-gray-600 leading-relaxed text-lg mb-6">
+          <strong class="text-agri-dark">Prime Harvest Lanka (Pvt) Ltd.</strong> is committed to transforming
+          Sri Lankan agriculture by integrating traditional farming expertise with innovative agricultural technologies.
+        </p>
+        <p class="text-gray-500 leading-relaxed mb-8">
+          We support sustainable cultivation practices, productivity enhancement, and environmentally responsible
+          farming solutions that benefit both farmers and consumers across Sri Lanka and beyond.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
+                style="background:#e8f5e1; color:#0D5B36;">
+            <i class="fa-solid fa-seedling"></i> Sustainable Farming
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
+                style="background:#fff8e6; color:#9a7020;">
+            <i class="fa-solid fa-wheat-awn"></i> Quality Crops
+          </span>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
+                style="background:#e3f0fb; color:#1a6090;">
+            <i class="fa-solid fa-droplet"></i> Smart Irrigation
+          </span>
+        </div>
+      </div>
+
+      <!-- Image Collage -->
+      <div class="reveal-right grid grid-cols-2 gap-4">
+        <div class="rounded-2xl overflow-hidden h-48 shadow-lg" style="background:linear-gradient(135deg,#0D5B36,#5C9445);">
+          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&q=80"
+               alt="Sri Lankan paddy fields"
+               class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        </div>
+        <div class="rounded-2xl overflow-hidden h-48 shadow-lg mt-8" style="background:linear-gradient(135deg,#D3A233,#e8c06e);">
+          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80"
+               alt="Modern agricultural technology"
+               class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        </div>
+        <div class="rounded-2xl overflow-hidden h-48 shadow-lg" style="background:linear-gradient(135deg,#5C9445,#8ab86e);">
+          <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80"
+               alt="Sustainable agriculture"
+               class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        </div>
+        <div class="rounded-2xl overflow-hidden h-48 shadow-lg mt-8" style="background:linear-gradient(135deg,#0D5B36,#1a7a4a);">
+          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80"
+               alt="Drone farming"
+               class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="feature-card p-8 reveal" style="transition-delay:0.1s;">
+        <div class="feature-icon"><span style="font-size:1.8rem;">🌾</span></div>
+        <h3 class="text-xl font-bold mb-3" style="color:#0D5B36;">Sustainable Farming</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">We champion eco-friendly cultivation methods that preserve Sri Lanka's natural resources while maximising yield and quality for every harvest season.</p>
+      </div>
+      <div class="feature-card p-8 reveal" style="transition-delay:0.2s;">
+        <div class="feature-icon"><span style="font-size:1.8rem;">🚜</span></div>
+        <h3 class="text-xl font-bold mb-3" style="color:#0D5B36;">Modern Agriculture Technology</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">From precision farming tools to drone-assisted monitoring, we bring cutting-edge agricultural technology to every field we work with across Sri Lanka.</p>
+      </div>
+      <div class="feature-card p-8 reveal" style="transition-delay:0.3s;">
+        <div class="feature-icon"><span style="font-size:1.8rem;">🌱</span></div>
+        <h3 class="text-xl font-bold mb-3" style="color:#0D5B36;">Environmental Responsibility</h3>
+        <p class="text-gray-500 leading-relaxed text-sm">Our commitment to environmental stewardship means every solution we develop helps protect the soil, water, and biodiversity that future generations depend on.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<script>
-  const btn = document.getElementById('copyBtn');
-  const email = 'hello@primeharvestlanka.lk';
-  btn.addEventListener('click', async () => {
-    try{
-      await navigator.clipboard.writeText(email);
-      btn.textContent = 'Copied';
-      btn.dataset.state = 'copied';
-      setTimeout(() => { btn.textContent = 'Copy'; btn.dataset.state = ''; }, 1800);
-    }catch(e){
-      window.location.href = 'mailto:' + email;
-    }
-  });
-</script>
+<!-- ==================== MISSION & VISION ==================== -->
+<section id="mission" class="py-20"
+         style="background:linear-gradient(160deg,#0D5B36 0%,#1a7a4a 50%,#0D5B36 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <span class="section-eyebrow">Our Purpose</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Mission &amp; Vision</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Mission Card -->
+      <div class="mv-card reveal-left"
+           style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); backdrop-filter:blur(12px);">
+        <div class="p-8 sm:p-10">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-2xl"
+               style="background:rgba(211,162,51,0.2); border:1.5px solid rgba(211,162,51,0.4);">🎯</div>
+          <h3 class="text-2xl font-bold text-white mb-2">Our Mission</h3>
+          <div class="w-10 h-1 rounded-full mb-5" style="background:#D3A233;"></div>
+          <p class="text-white/80 leading-relaxed text-base">
+            To empower Sri Lankan agriculture through sustainable practices, innovative technologies, and reliable
+            agricultural solutions that improve productivity while preserving natural resources for generations to come.
+          </p>
+          <div class="mt-6 flex flex-col gap-3">
+            <div class="flex items-center gap-3 text-white/70 text-sm">
+              <i class="fa-solid fa-check-circle" style="color:#D3A233;"></i> Sustainable cultivation practices
+            </div>
+            <div class="flex items-center gap-3 text-white/70 text-sm">
+              <i class="fa-solid fa-check-circle" style="color:#D3A233;"></i> Productivity enhancement
+            </div>
+            <div class="flex items-center gap-3 text-white/70 text-sm">
+              <i class="fa-solid fa-check-circle" style="color:#D3A233;"></i> Natural resource preservation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="mv-card reveal-right"
+           style="background:rgba(211,162,51,0.12); border:1px solid rgba(211,162,51,0.3); backdrop-filter:blur(12px);">
+        <div class="p-8 sm:p-10">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-2xl"
+               style="background:rgba(255,255,255,0.12); border:1.5px solid rgba(255,255,255,0.2);">🌟</div>
+          <h3 class="text-2xl font-bold text-white mb-2">Our Vision</h3>
+          <div class="w-10 h-1 rounded-full mb-5" style="background:#D3A233;"></div>
+          <p class="text-white/80 leading-relaxed text-base">
+            To become Sri Lanka's most trusted agricultural innovation partner, leading the transformation toward
+            smarter, greener, and more sustainable farming that uplifts every farming community in the nation.
+          </p>
+          <div class="mt-6 flex flex-col gap-3">
+            <div class="flex items-center gap-3 text-white/70 text-sm">
+              <i class="fa-solid fa-check-circle" style="color:#D3A233;"></i> Trusted industry leadership
+            </div>
+            <div class="flex items-center gap-3 text-white/70 text-sm">
+              <i class="fa-solid fa-check-circle" style="color:#D3A233;"></i> Smarter, greener farming
+            </div>
+            <div class="flex items-center gap-3 text-white/70 text-sm">
+              <i class="fa-solid fa-check-circle" style="color:#D3A233;"></i> National agricultural transformation
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Motto Banner -->
+    <div class="mt-12 text-center reveal">
+      <div class="inline-block px-8 py-4 rounded-2xl"
+           style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(8px);">
+        <p class="text-lg font-semibold tracking-wider" style="color:#D3A233;">
+          <i class="fa-solid fa-quote-left text-sm mr-2 opacity-60"></i>
+          Rooted in Nature, Driven by Innovation
+          <i class="fa-solid fa-quote-right text-sm ml-2 opacity-60"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE US ==================== -->
+<section class="py-20 bg-white agri-bg-pattern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <span class="section-eyebrow">Our Strengths</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-2" style="color:#0D5B36;">Why Choose Us</h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto text-base">
+        We combine agricultural heritage with modern innovation to deliver solutions that genuinely make a difference in every field.
+      </p>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div class="why-card reveal" style="transition-delay:0.05s;">
+        <div class="why-icon"><i class="fa-solid fa-users"></i></div>
+        <h4 class="font-bold text-base mb-2" style="color:#0D5B36;">Experienced Agricultural Team</h4>
+        <p class="text-sm text-gray-500">Our team brings decades of on-the-ground farming knowledge across Sri Lanka's diverse agricultural zones.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.1s;">
+        <div class="why-icon"><i class="fa-solid fa-tractor"></i></div>
+        <h4 class="font-bold text-base mb-2" style="color:#0D5B36;">Modern Farming Solutions</h4>
+        <p class="text-sm text-gray-500">We deploy the latest agri-tech tools, from drone monitoring to precision irrigation, tailored to local conditions.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.15s;">
+        <div class="why-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h4 class="font-bold text-base mb-2" style="color:#0D5B36;">Sustainable Practices</h4>
+        <p class="text-sm text-gray-500">Every practice we recommend is designed to sustain the land, water, and biodiversity for the long term.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.2s;">
+        <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h4 class="font-bold text-base mb-2" style="color:#0D5B36;">Customer-Centered Approach</h4>
+        <p class="text-sm text-gray-500">Farmers are our partners. We listen, understand, and build solutions around the real needs of each individual.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.25s;">
+        <div class="why-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <h4 class="font-bold text-base mb-2" style="color:#0D5B36;">Innovation Driven</h4>
+        <p class="text-sm text-gray-500">We continuously research and adopt emerging agricultural innovations to stay ahead for the farmers we serve.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.3s;">
+        <div class="why-icon"><i class="fa-solid fa-star"></i></div>
+        <h4 class="font-bold text-base mb-2" style="color:#0D5B36;">Quality Assurance</h4>
+        <p class="text-sm text-gray-500">From seed selection to post-harvest handling, we maintain rigorous quality standards throughout every process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AGRICULTURE SHOWCASE ==================== -->
+<section class="py-20" style="background:#f4f9f4;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <span class="section-eyebrow">Agricultural Portfolio</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-2" style="color:#0D5B36;">Our Agriculture Showcase</h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto text-base">
+        From lush paddy fields to high-tech precision farming — explore the breadth of agricultural excellence we champion across Sri Lanka.
+      </p>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+
+      <div class="gallery-card reveal" style="transition-delay:0.05s;">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80"
+             alt="Paddy Cultivation" class="w-full h-56 object-cover" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div>
+            <span class="text-white font-bold text-sm">🌾 Paddy Cultivation</span>
+            <p class="text-white/70 text-xs mt-0.5">Traditional rice cultivation with modern yield techniques</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal" style="transition-delay:0.1s;">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
+             alt="Vegetable Farming" class="w-full h-56 object-cover" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div>
+            <span class="text-white font-bold text-sm">🥬 Vegetable Farming</span>
+            <p class="text-white/70 text-xs mt-0.5">High-yield vegetable cultivation for local and export markets</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal" style="transition-delay:0.15s;">
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80"
+             alt="Agricultural Technology" class="w-full h-56 object-cover" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div>
+            <span class="text-white font-bold text-sm">🚁 Agricultural Technology</span>
+            <p class="text-white/70 text-xs mt-0.5">Drone-assisted monitoring and precision spraying systems</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal" style="transition-delay:0.2s;">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80"
+             alt="Sustainable Farming" class="w-full h-56 object-cover" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div>
+            <span class="text-white font-bold text-sm">🌿 Sustainable Farming</span>
+            <p class="text-white/70 text-xs mt-0.5">Eco-friendly methods that protect soil health and biodiversity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal" style="transition-delay:0.25s;">
+        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80"
+             alt="Smart Irrigation" class="w-full h-56 object-cover" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div>
+            <span class="text-white font-bold text-sm">💧 Smart Irrigation</span>
+            <p class="text-white/70 text-xs mt-0.5">Water-efficient drip and sprinkler systems for all crop types</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal" style="transition-delay:0.3s;">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80"
+             alt="Crop Management" class="w-full h-56 object-cover" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div>
+            <span class="text-white font-bold text-sm">📊 Crop Management</span>
+            <p class="text-white/70 text-xs mt-0.5">Data-driven crop planning and harvest optimisation services</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT US ==================== -->
+<section id="contact" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <span class="section-eyebrow">Reach Out</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-2" style="color:#0D5B36;">Get In Touch</h2>
+      <p class="text-gray-500 mt-4 max-w-xl mx-auto">We'd love to hear from you. Let's discuss how we can grow together.</p>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-10 items-start">
+
+      <!-- Left: Company Info Panel -->
+      <div class="lg:col-span-2 reveal-left">
+        <div class="rounded-2xl p-8 h-full"
+             style="background:linear-gradient(160deg,#0D5B36 0%,#1a7a4a 100%);">
+
+          <!-- Logo inside contact panel -->
+          <div class="flex items-center gap-3 mb-8">
+            <svg width="44" height="44" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="58" fill="rgba(255,255,255,0.1)"/>
+              <path d="M38 20 L38 100 L52 100 L52 68 Q52 68 68 68 Q88 68 88 48 Q88 20 68 20 Z" fill="rgba(255,255,255,0.9)"/>
+              <path d="M52 34 L68 34 Q74 34 74 48 Q74 56 68 56 L52 56 Z" fill="#0D5B36"/>
+              <path d="M52 60 Q66 56 78 62 Q70 68 52 68 Z" fill="rgba(255,255,255,0.5)"/>
+              <path d="M44 72 Q38 60 40 40" stroke="#D3A233" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="37" cy="50" rx="5" ry="3" fill="#D3A233" transform="rotate(-30 37 50)"/>
+              <ellipse cx="36" cy="44" rx="5" ry="3" fill="#D3A233" transform="rotate(-40 36 44)"/>
+              <ellipse cx="42" cy="48" rx="5" ry="3" fill="#D3A233" transform="rotate(20 42 48)"/>
+            </svg>
+            <div>
+              <div class="font-bold text-white leading-tight">PRIME <span style="color:#D3A233;">HARVEST</span></div>
+              <div class="text-white/60 text-xs tracking-widest">— LANKA —</div>
+            </div>
+          </div>
+
+          <h3 class="text-white/50 text-xs font-semibold uppercase tracking-widest mb-6">Company Information</h3>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-building"></i></div>
+            <div>
+              <div class="text-white/50 text-xs uppercase tracking-wider mb-0.5">Company</div>
+              <div class="text-white font-semibold text-sm">Prime Harvest Lanka (Pvt) Ltd.</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="text-white/50 text-xs uppercase tracking-wider mb-0.5">Address</div>
+              <div class="text-white font-semibold text-sm">63/A 106, WeeraKeppatipola MW,<br/>Bandarawatta, Gampaha</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="text-white/50 text-xs uppercase tracking-wider mb-0.5">Phone</div>
+              <a href="tel:+94775950050" class="text-white font-semibold text-sm" style="transition:color 0.2s;">+94 775 950 050</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="text-white/50 text-xs uppercase tracking-wider mb-0.5">Email</div>
+              <a href="mailto:hello@primeharvestlanka.lk" class="text-white font-semibold text-sm" style="transition:color 0.2s;">hello@primeharvestlanka.lk</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
+            <div>
+              <div class="text-white/50 text-xs uppercase tracking-wider mb-0.5">Website</div>
+              <a href="https://www.primeharveslanka.lk" class="text-white font-semibold text-sm" style="transition:color 0.2s;">www.primeharveslanka.lk</a>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-white/15">
+            <p class="text-center italic text-white/60 text-sm">
+              "Rooted in Nature, Driven by Innovation"
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="lg:col-span-3 reveal-right">
+        <div class="bg-white rounded-2xl p-8 shadow-xl" style="border:1px solid rgba(13,91,54,0.08);">
+          <h3 class="text-xl font-bold mb-1" style="color:#0D5B36;">Send Us a Message</h3>
+          <p class="text-gray-400 text-sm mb-7">Fill out the form below and we'll get back to you shortly.</p>
+
+          <form id="contactForm" class="space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style="color:#0D5B36;">
+                  Full Name <span class="text-red-400">*</span>
+                </label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required class="form-input"/>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style="color:#0D5B36;">
+                  Email Address <span class="text-red-400">*</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required class="form-input"/>
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style="color:#0D5B36;">
+                  Phone Number
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="+94 7XX XXX XXX" class="form-input"/>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style="color:#0D5B36;">
+                  Subject <span class="text-red-400">*</span>
+                </label>
+                <input type="text" id="subject" name="subject" placeholder="How can we help?" required class="form-input"/>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style="color:#0D5B36;">
+                Message <span class="text-red-400">*</span>
+              </label>
+              <textarea id="message" name="message" rows="5"
+                        placeholder="Tell us about your agricultural needs or enquiries..."
+                        required class="form-input resize-none"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn"
+                    class="w-full py-3.5 rounded-xl font-bold text-white text-base flex items-center justify-center gap-2 transition-all"
+                    style="background:linear-gradient(135deg,#0D5B36,#5C9445);"
+                    onmouseover="if(!this.disabled)this.style.opacity='0.92'"
+                    onmouseout="this.style.opacity='1'">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span id="btnText">Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer style="background:#0D5B36;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="46" height="46" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="58" fill="rgba(255,255,255,0.08)"/>
+            <path d="M38 20 L38 100 L52 100 L52 68 Q52 68 68 68 Q88 68 88 48 Q88 20 68 20 Z" fill="rgba(255,255,255,0.85)"/>
+            <path d="M52 34 L68 34 Q74 34 74 48 Q74 56 68 56 L52 56 Z" fill="#0D5B36"/>
+            <path d="M52 60 Q66 56 78 62 Q70 68 52 68 Z" fill="rgba(255,255,255,0.4)"/>
+            <path d="M44 72 Q38 60 40 40" stroke="#D3A233" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="37" cy="50" rx="5" ry="3" fill="#D3A233" transform="rotate(-30 37 50)"/>
+            <ellipse cx="36" cy="44" rx="5" ry="3" fill="#D3A233" transform="rotate(-40 36 44)"/>
+            <ellipse cx="42" cy="48" rx="5" ry="3" fill="#D3A233" transform="rotate(20 42 48)"/>
+          </svg>
+          <div>
+            <div class="text-white font-bold text-xl">PRIME <span style="color:#D3A233;">HARVEST</span></div>
+            <div class="text-white/50 text-xs tracking-widest">— LANKA —</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed max-w-xs mb-5">
+          Combining traditional Sri Lankan agricultural knowledge with modern technologies to deliver
+          sustainable farming solutions for a better tomorrow.
+        </p>
+        <p class="text-sm italic" style="color:#D3A233;">"Rooted in Nature, Driven by Innovation"</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-5">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="#home"    class="footer-link flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs" style="color:#D3A233;"></i> Home</a></li>
+          <li><a href="#about"   class="footer-link flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs" style="color:#D3A233;"></i> About Us</a></li>
+          <li><a href="#mission" class="footer-link flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs" style="color:#D3A233;"></i> Mission &amp; Vision</a></li>
+          <li><a href="#contact" class="footer-link flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs" style="color:#D3A233;"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div>
+        <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-5">Contact Details</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2 text-white/60 text-sm">
+            <i class="fa-solid fa-location-dot mt-0.5 flex-shrink-0" style="color:#D3A233;"></i>
+            <span>63/A 106, WeeraKeppatipola MW, Bandarawatta, Gampaha</span>
+          </li>
+          <li class="flex items-center gap-2 text-white/60 text-sm">
+            <i class="fa-solid fa-phone flex-shrink-0" style="color:#D3A233;"></i>
+            <a href="tel:+94775950050" class="footer-link">+94 775 950 050</a>
+          </li>
+          <li class="flex items-center gap-2 text-white/60 text-sm">
+            <i class="fa-solid fa-envelope flex-shrink-0" style="color:#D3A233;"></i>
+            <a href="mailto:hello@primeharvestlanka.lk" class="footer-link">hello@primeharvestlanka.lk</a>
+          </li>
+          <li class="flex items-center gap-2 text-white/60 text-sm">
+            <i class="fa-solid fa-globe flex-shrink-0" style="color:#D3A233;"></i>
+            <a href="https://www.primeharveslanka.lk" class="footer-link">www.primeharveslanka.lk</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div style="background:rgba(0,0,0,0.2);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p class="text-white/50 text-xs">© 2026 Prime Harvest Lanka (Pvt) Ltd. All Rights Reserved.</p>
+      <p class="text-white/30 text-xs">Rooted in Nature, Driven by Innovation</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== SCROLL TO TOP ==================== -->
+<button id="scrollTop" onclick="scrollToTop()" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- External JavaScript (loaded at end of body for DOM readiness) -->
+<script src="main.js"></script>
 
 </body>
 </html>
